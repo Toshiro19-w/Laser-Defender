@@ -1,30 +1,16 @@
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 
-public class UIDisplay : MonoBehaviour
+public class UiDisplay : MonoBehaviour
 {
-    [Header("Health")]
-    [SerializeField] Slider healthSlider;
-    [SerializeField] Health playerHealth;
-
-    [Header("Score")]
-    [SerializeField] TextMeshProUGUI scoreText;
-    ScoreKeeper scoreKeeper;
-
-    void Awake()
-    {
-        scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
-    }
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        healthSlider.maxValue = playerHealth.GetHealth();
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-        healthSlider.value = playerHealth.GetHealth();
-        scoreText.text = scoreKeeper.GetScore().ToString("000000000");
+        
     }
 }
